@@ -33,7 +33,7 @@
 
 //console.log(n1);
 //console.log(n2);
- //console.log(n3);
+//console.log(n3);
 // console.log(n4);
 // console.log(n5); //are there ll node limits in read-outs?
 
@@ -68,12 +68,12 @@ class LinkedList {
         let node = new Node(data);
         let current;
 
-        if(!this.head) {
+        if (!this.head) {
             this.head = node;
         } else {
             current = this.head
 
-            while(current.next) {
+            while (current.next) {
                 current = current.next;
             }
             current.next = node;
@@ -84,21 +84,21 @@ class LinkedList {
 
     //Insert at index
     insertAt(data, index) {
-        if(index > 0 && index > this.size) { //if index is out of range
-        return;
+        if (index > 0 && index > this.size) { //if index is out of range
+            return;
         }
 
-        if(index === 0) {
+        if (index === 0) {
             this.head = new Node(data, this.head); //if it's the first
             return;
         }
-        
+
         const node = new Node(data);
         let current, previous;
 
         current = this.head;  //set current to first
         let count = 0;
-        while(count < index) {
+        while (count < index) {
             previous = current; //node before index to insert;
             count++;
             current = current.next //node after index
@@ -115,19 +115,19 @@ class LinkedList {
         let current = this.head;
         let count = 0;
 
-        while(current){
-            if(count === index) {
+        while (current) {
+            if (count === index) {
                 console.log(current.data)
             }
             count++;
             current = current.next;
         }
-       return;    
-    }   
-    
+        return;
+    }
+
     //Remove at index
     removeAt(index) {
-        if(index > 0 && index > this.size) { //if out of range
+        if (index > 0 && index > this.size) { //if out of range
             return;
         }
 
@@ -138,14 +138,14 @@ class LinkedList {
         if (index === 0) { //remove first
             this.head = current.next;
         } else {
-            while(count < index) {
+            while (count < index) {
                 count++;
                 previous = current;
                 current = current.next;
             }
 
             previous.next = current.next;
-        }    
+        }
 
         this.size--;
     }
@@ -160,7 +160,7 @@ class LinkedList {
     printListData() {
         let current = this.head;
 
-        while(current) {
+        while (current) {
             console.log(current.data);
             current = current.next;
         }
